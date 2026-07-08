@@ -1,5 +1,9 @@
 # spec-z-ml
 
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 Estimativa de **redshift espectroscópico** (spec-z) diretamente de espectros do
 **SDSS/eBOSS**, usando aprendizado de máquina — de XGBoost a redes neurais
 convolucionais 1D.
@@ -85,3 +89,7 @@ dados também pode ser fixado via `SPECZML_DATA`.
 `data/` (~93 GB) e `models/` (~245 MB) **não** são versionados. Os espectros vêm do
 SDSS DR17 / eBOSS — instruções de download em [data/README.md](data/README.md). As
 métricas e figuras dos resultados estão versionadas em `results/`.
+
+## Licença
+
+Distribuído sob a licença [MIT](LICENSE) — livre para uso, com atribuição.
