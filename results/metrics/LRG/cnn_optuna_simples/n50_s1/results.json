@@ -1,0 +1,29 @@
+{
+  "object_type": "LRG",
+  "n_trials": 50,
+  "n_complete": 23,
+  "n_pruned": 27,
+  "seed": 1,
+  "best_params": {
+    "learning_rate": 0.0002886752412954061,
+    "dropout_rate": 0.06248879619131754,
+    "batch_size": 32,
+    "kernel_size": 21
+  },
+  "best_val_loss": 0.000263060734141618,
+  "best_trial": 49,
+  "test_metrics": {
+    "mae": 0.007258661091327667,
+    "bias": -0.0014973158249631524,
+    "sigma_nmad": 0.0032473383471369743,
+    "outliers_05": 0.3054523239830983,
+    "outliers_15": 0.03054523239830983
+  },
+  "config": {
+    "EPOCHS_PER_TRIAL": 50,
+    "FINAL_EPOCHS": 100,
+    "N_TRIALS": 50,
+    "loss": "mse",
+    "output_activation": "ScaledSoftplus"
+  }
+}

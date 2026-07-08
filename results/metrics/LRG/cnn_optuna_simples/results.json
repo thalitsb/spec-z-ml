@@ -1,0 +1,17 @@
+{
+  "best_params": {
+    "learning_rate": 0.0003050049108104579,
+    "dropout_rate": 0.07134993525427619,
+    "batch_size": 32,
+    "kernel_size": 21
+  },
+  "best_val_mae": 0.0197401475161314,
+  "n_trials": 51,
+  "test_metrics": {
+    "mae": 0.014968476258218288,
+    "bias": 7.876483141444623e-05,
+    "sigma_nmad": 0.00806379970163107,
+    "outliers_05": 0.7636308099577458,
+    "outliers_15": 0.005090872066384972
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-05-27T21:21:26.806860Z",
+  "run_tag": "xgb_optuna_pca-LRG-pc300_t50_s42",
+  "object_type": "LRG",
+  "seed": 42,
+  "n_components_pca": 300,
+  "pca_variance_retained": 0.7428253889083862,
+  "n_trials": 50,
+  "best_trial_number": 48,
+  "best_val_rmse": 0.05185837468124698,
+  "best_params": {
+    "n_estimators": 3800,
+    "max_depth": 5,
+    "learning_rate": 0.03944932934522378,
+    "subsample": 0.5940628175743563,
+    "colsample_bytree": 0.7857851923920578,
+    "min_child_weight": 15,
+    "reg_alpha": 6.296120390183371e-05,
+    "reg_lambda": 0.0671029829405177,
+    "gamma": 1.1904244216154461e-06
+  },
+  "tuning_time_min": 78.3072375535965,
+  "final_train_time_s": 88.9633994102478,
+  "splits": {
+    "n_train": 94612,
+    "n_val": 16697,
+    "n_test": 19643
+  },
+  "test_metrics": {
+    "mae": 0.04059426113963127,
+    "rmse": 0.051838990300893784,
+    "bias": 0.002090905560180545,
+    "sigma_nmad": 0.02840796485543251,
+    "eta_outliers_0.05": 8.97011658097032,
+    "eta_outliers_0.15": 0.0
+  },
+  "storage": "sqlite:////local-scratch/thalita-xgb-pca-37547/models/LRG/xgb_optuna_pca/xgb_optuna_pca-LRG-pc300_t50_s42/optuna_pca_lrg.db",
+  "study_name": "xgb_pca_lrg"
+}

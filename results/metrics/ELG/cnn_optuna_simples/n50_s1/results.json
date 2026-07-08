@@ -1,0 +1,29 @@
+{
+  "object_type": "ELG",
+  "n_trials": 51,
+  "n_complete": 27,
+  "n_pruned": 23,
+  "seed": 1,
+  "best_params": {
+    "learning_rate": 0.0014006841468422663,
+    "dropout_rate": 0.19347675225321068,
+    "batch_size": 64,
+    "kernel_size": 25
+  },
+  "best_val_loss": 0.000317866331897676,
+  "best_trial": 21,
+  "test_metrics": {
+    "mae": 0.006684127729386091,
+    "bias": -0.0008271723054349422,
+    "sigma_nmad": 0.0025298958644270897,
+    "outliers_05": 0.6034930658247072,
+    "outliers_15": 0.047959713840374084
+  },
+  "config": {
+    "EPOCHS_PER_TRIAL": 50,
+    "FINAL_EPOCHS": 100,
+    "N_TRIALS": 50,
+    "loss": "mse",
+    "output_activation": "ScaledSoftplus"
+  }
+}

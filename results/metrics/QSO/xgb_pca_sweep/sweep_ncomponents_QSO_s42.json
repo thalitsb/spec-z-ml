@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-06-25T18:22:31.262335Z",
+  "object_type": "QSO",
+  "seed": 42,
+  "components": [
+    300,
+    800,
+    1200
+  ],
+  "xgb_params": {
+    "n_estimators": 10000,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "min_child_weight": 3,
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "n_jobs": -1,
+    "early_stopping_rounds": 50
+  },
+  "n_train": 216676,
+  "n_val": 38238,
+  "n_test": 44985,
+  "results": [
+    {
+      "n_components": 300,
+      "variance_retained": 0.9025298357009888,
+      "best_iteration": 9054,
+      "nmad": 0.0452510267496109,
+      "mae": 0.11202351003885269,
+      "bias": 0.0010376146528869867,
+      "eta_outliers_0.05": 31.1081471601645,
+      "eta_outliers_0.15": 4.625986439924419,
+      "train_time_s": 361.5285222530365
+    },
+    {
+      "n_components": 800,
+      "variance_retained": 0.9571326375007629,
+      "best_iteration": 9532,
+      "nmad": 0.045352231711149216,
+      "mae": 0.11242515593767166,
+      "bias": 0.0007627077866345644,
+      "eta_outliers_0.05": 31.26820051128154,
+      "eta_outliers_0.15": 4.661553851283761,
+      "train_time_s": 2533.852106809616
+    },
+    {
+      "n_components": 1200,
+      "variance_retained": 0.970579981803894,
+      "best_iteration": 8354,
+      "nmad": 0.0464351512491703,
+      "mae": 0.11420236527919769,
+      "bias": 0.0010429394897073507,
+      "eta_outliers_0.05": 31.983994664888293,
+      "eta_outliers_0.15": 4.80160053351117,
+      "train_time_s": 3565.73747587204
+    }
+  ]
+}

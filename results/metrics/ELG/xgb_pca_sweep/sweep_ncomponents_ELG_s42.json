@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-06-25T16:31:58.835111Z",
+  "object_type": "ELG",
+  "seed": 42,
+  "components": [
+    300,
+    500,
+    800,
+    1200,
+    1912
+  ],
+  "xgb_params": {
+    "n_estimators": 10000,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_alpha": 0.1,
+    "reg_lambda": 1.0,
+    "min_child_weight": 3,
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "n_jobs": -1,
+    "early_stopping_rounds": 50
+  },
+  "n_train": 120513,
+  "n_val": 21267,
+  "n_test": 25021,
+  "results": [
+    {
+      "n_components": 300,
+      "variance_retained": 0.731916606426239,
+      "best_iteration": 707,
+      "nmad": 0.051481880247592926,
+      "mae": 0.07580986618995667,
+      "bias": 0.003885951591655612,
+      "eta_outliers_0.05": 33.60776947364214,
+      "eta_outliers_0.15": 0.22381199792174572,
+      "train_time_s": 27.103148698806763
+    },
+    {
+      "n_components": 500,
+      "variance_retained": 0.812812328338623,
+      "best_iteration": 2564,
+      "nmad": 0.04023225978016853,
+      "mae": 0.06133433058857918,
+      "bias": 0.001824732986278832,
+      "eta_outliers_0.05": 22.525078933695696,
+      "eta_outliers_0.15": 0.1398824987010911,
+      "train_time_s": 432.1127018928528
+    },
+    {
+      "n_components": 800,
+      "variance_retained": 0.8674618601799011,
+      "best_iteration": 3716,
+      "nmad": 0.03658188506960869,
+      "mae": 0.05695151165127754,
+      "bias": 0.001917924266308546,
+      "eta_outliers_0.05": 19.455657247911752,
+      "eta_outliers_0.15": 0.09591942768074817,
+      "train_time_s": 769.8471930027008
+    },
+    {
+      "n_components": 1200,
+      "variance_retained": 0.9066444039344788,
+      "best_iteration": 5048,
+      "nmad": 0.03521480783820152,
+      "mae": 0.05557653307914734,
+      "bias": 0.0015617357566952705,
+      "eta_outliers_0.05": 18.40454018624356,
+      "eta_outliers_0.15": 0.09591942768074817,
+      "train_time_s": 1744.7725801467896
+    },
+    {
+      "n_components": 1912,
+      "variance_retained": 0.9447703957557678,
+      "best_iteration": 4460,
+      "nmad": 0.03554443269968033,
+      "mae": 0.05579531565308571,
+      "bias": 0.0015757158398628235,
+      "eta_outliers_0.05": 18.612365612885178,
+      "eta_outliers_0.15": 0.11590264178090405,
+      "train_time_s": 2377.697514295578
+    }
+  ]
+}

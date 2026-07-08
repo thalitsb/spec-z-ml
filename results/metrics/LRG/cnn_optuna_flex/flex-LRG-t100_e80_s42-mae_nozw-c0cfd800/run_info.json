@@ -1,0 +1,180 @@
+{
+  "created_utc": "2026-07-07T12:26:15.090568Z",
+  "run_tag": "flex-LRG-t100_e80_s42-mae_nozw-c0cfd800",
+  "config_hash": "c0cfd800",
+  "study_name": "cnn_flex_LRG_mae_c0cfd800",
+  "seed": 42,
+  "object_type": "LRG",
+  "n_wave": 4674,
+  "splits": {
+    "test_size": 0.15,
+    "val_size": 0.15,
+    "n_train": 94612,
+    "n_val": 16697,
+    "n_test": 19643,
+    "q_outer": 20,
+    "q_inner": 20
+  },
+  "scalars": {
+    "features": [
+      "log_max",
+      "log_median",
+      "log_sum",
+      "log_p95"
+    ],
+    "n_scalars": 4,
+    "note": "scalars salvos em log10 (sem z-score), nao alimentam o modelo"
+  },
+  "objective_mode": "mae",
+  "w_sigma": 0.5,
+  "sigma_nmad_ref": 0.054855939000844955,
+  "eta_outliers_ref": 1.0,
+  "n_trials": 73,
+  "n_trials_complete": 50,
+  "n_trials_pruned": 22,
+  "best_trial": 72,
+  "best_score": 0.0038343393243849277,
+  "best_params": {
+    "n_conv_blocks": 4,
+    "n_dense_layers": 4,
+    "n_units": 576,
+    "kernel_size": 25,
+    "dropout_rate": 0.06536136395989106,
+    "learning_rate": 0.0014332932063262501,
+    "weight_decay": 0.002394015734817799,
+    "activation": "elu",
+    "batch_size": 128,
+    "use_batchnorm": true,
+    "dropout_schedule": "ramp",
+    "optimizer": "adamw",
+    "taper_last_block": true
+  },
+  "best_user_attrs": {
+    "best_epoch": 76,
+    "val_bias": -8.542955765733495e-05,
+    "val_eta_15": 0.005989099838294304,
+    "val_mae": 0.0038343393243849277,
+    "val_sigma": 0.0015563660999760032
+  },
+  "final_epochs_trained": 75,
+  "test_metrics": {
+    "mae": 0.004522924777120352,
+    "bias": 5.6810044043231755e-05,
+    "sigma_nmad": 0.001635130844078958,
+    "eta_outliers_0.05": 0.2850888357175584,
+    "eta_outliers_0.15": 0.0,
+    "f_inliers_0.15": 100.0
+  },
+  "train_time_s": 2261.709914445877,
+  "training_config": {
+    "epochs": 80,
+    "test_size": 0.15,
+    "val_size": 0.15,
+    "early_stop_patience": 20,
+    "early_stop_min_delta": 0.0,
+    "reduce_lr_factor": 0.3,
+    "reduce_lr_patience": 10,
+    "reduce_lr_min": 1e-08
+  },
+  "objective_config": {
+    "mode": "mae",
+    "w_sigma": 0.5
+  },
+  "hpo_config": {
+    "target_trials": 100,
+    "n_startup_trials": 10,
+    "n_warmup_steps": 3,
+    "interval_steps": 1,
+    "pruner_percentile": 75
+  },
+  "hp_space": {
+    "n_conv_blocks": {
+      "low": 1,
+      "high": 4
+    },
+    "n_dense_layers": {
+      "low": 1,
+      "high": 4
+    },
+    "n_units": {
+      "low": 128,
+      "high": 1024,
+      "step": 64
+    },
+    "kernel_size": [
+      11,
+      15,
+      21,
+      25
+    ],
+    "use_batchnorm": [
+      true,
+      false
+    ],
+    "dropout_schedule": [
+      "ramp",
+      "flat"
+    ],
+    "taper_last_block": [
+      true,
+      false
+    ],
+    "dropout_rate": {
+      "low": 0.05,
+      "high": 0.35
+    },
+    "learning_rate": {
+      "low": 0.0001,
+      "high": 0.003,
+      "log": true
+    },
+    "weight_decay": {
+      "low": 2e-06,
+      "high": 0.005,
+      "log": true
+    },
+    "activation": [
+      "relu",
+      "elu",
+      "swish"
+    ],
+    "batch_size": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "optimizer": [
+      "adamw",
+      "adam"
+    ]
+  },
+  "scalars_config": {
+    "features": [
+      "log_max",
+      "log_median",
+      "log_sum",
+      "log_p95"
+    ],
+    "use_log10": true,
+    "mask_nonpositive": true,
+    "used_in_model": false
+  },
+  "weights_config": {
+    "use_z_weights": false,
+    "z_focus_low": 0.85,
+    "z_focus_high": 1.0,
+    "w_low": 1.0,
+    "w_focus": 2.0,
+    "w_high": 0.7,
+    "w_max": 3.0
+  },
+  "env": {
+    "python": "3.13.0",
+    "tf": "2.21.0",
+    "keras": "3.12.0",
+    "numpy": "2.1.3",
+    "sklearn": "1.8.0",
+    "optuna": "4.4.0"
+  }
+}

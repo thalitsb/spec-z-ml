@@ -1,0 +1,42 @@
+name: spec_z_ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+
+  # Numerico
+  - numpy
+  - scipy
+  - pandas
+
+  # ML classico
+  - scikit-learn
+  - xgboost
+  - optuna
+
+  # Astronomia
+  - astropy
+  - astroquery
+  - fitsio
+  - h5py
+  - pytables
+
+  # Visualizacao
+  - matplotlib
+  - seaborn
+  - plotly
+
+  # Jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+
+  # Utilitarios
+  - tqdm
+  - pyyaml
+  - joblib
+
+  # TensorFlow + CUDA via pip (recomendacao oficial)
+  - pip:
+      - tensorflow[and-cuda]==2.17.*
