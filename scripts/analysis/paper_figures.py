@@ -49,18 +49,25 @@ REG = {
     "ELG": {
         "XGBoost":      "results/ELG/xgboost_baseline/predictions.npz",
         "CNN baseline": "results/ELG/cnn_baseline/predictions.npz",
+        "CNN flex":     "results/ELG/cnn_optuna_flex/flex-ELG-t50_e40_s42-mae_nozw-12a788ad/test_outputs.npz",
         "CNN linedet":  "results/ELG/cnn_linedet/predictions.npz",
     },
     "QSO": {
         "XGBoost":      "results/QSO/xgboost_baseline/predictions.npz",
         "CNN baseline": "results/QSO/cnn_baseline/predictions.npz",
+        "CNN flex":     "results/QSO/cnn_optuna_flex/flex-QSO-t50_e40_s42-mae_nozw-2955f8a8/test_outputs.npz",
+        "CNN linedet":  "results/QSO/cnn_linedet/predictions.npz",
     },
 }
 
-# cor fixa por modelo (consistencia entre figuras)
+# cor + marcador fixos por modelo (consistencia entre figuras; distinguivel em P&B)
 COLORS = {
     "XGBoost": "#d62728", "XGBoost+PCA": "#ff7f0e",
     "CNN baseline": "#1f77b4", "CNN flex": "#2ca02c", "CNN linedet": "#9467bd",
+}
+MARKERS = {
+    "XGBoost": "o", "XGBoost+PCA": "s", "CNN baseline": "^",
+    "CNN flex": "D", "CNN linedet": "v",
 }
 # preferencia de "melhor modelo" por objeto (pro painel de residuos)
 BEST = {"LRG": "CNN flex", "ELG": "CNN linedet", "QSO": "CNN baseline"}
@@ -121,8 +128,9 @@ def fig_sigma_by_zbin(data, n_bins=8):
                     continue
                 centers.append(0.5 * (edges[i] + edges[i + 1]))
                 sig.append(sigma_nmad(dz[m]))
-            ax.plot(centers, sig, marker="o", ms=3, lw=1.5,
-                    color=COLORS.get(model), label=model)
+            ax.plot(centers, sig, marker=MARKERS.get(model, "o"), ms=4, lw=1.5,
+                    color=COLORS.get(model), label=model, markeredgecolor="black",
+                    markeredgewidth=0.4)
         ax.set_yscale("log")
         ax.set_xlabel("z")
         ax.set_title(obj, fontweight="bold")
