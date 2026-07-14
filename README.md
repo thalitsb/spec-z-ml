@@ -24,17 +24,25 @@ galáxias com linhas de emissão (**ELG**) e quasares (**QSO**).
 ## Resultados principais
 
 Métrica: $\sigma_\mathrm{NMAD}$ (menor = melhor), sobre $\Delta z/(1+z)$.
+Salvo indicação, os valores são **média $\pm$ desvio-padrão sobre 5 sementes**
+(protocolo multissemente, mesmo split canônico por semente → comparação pareada).
 
 | Modelo | LRG | ELG | QSO | Papel |
 |---|---|---|---|---|
-| XGBoost (espectro cru) | 0.0180 | 0.0261 | 0.0551 | baseline alto |
-| XGBoost + PCA | 0.0250 | 0.0352 | ~0.045 | baseline justificador |
-| **CNN baseline** | **0.00376** | **0.00435** | **0.00743** | modelo principal |
-| **CNN linedet [O II]** | — | **0.000288** | — | contribuição nova (só ELG) |
+| XGBoost (espectro cru) | 0.0177±0.0001 | 0.0264±0.0003 | 0.0551±0.0001 | baseline alto |
+| XGBoost + PCA | 0.0283±0.0003 | 0.0392±0.0004 | 0.0528±0.0005 | baseline justificador |
+| **CNN baseline** | **0.0032±0.0001** | **0.0038±0.0002** | **0.0073±0.0003** | modelo principal |
+| CNN + Optuna (flex) † | 0.0016 | 0.0026 | 0.0069 | busca automática de arquitetura |
+| **CNN linedet [O II]** | — | **0.0003±0.0001** | — | contribuição nova (só ELG) |
 
-- As CNNs superam os modelos de árvore por **~5–15×**.
-- No ELG, a **detecção de linha** ([O II]) bate a regressão por **~15×**, chegando a
-  ~86 km/s (vs ~20 km/s do piso físico).
+† Valor de semente única — a busca de arquitetura é cara e o multi-semente do flex
+fica como trabalho futuro; ainda assim, supera o *baseline* nos três alvos.
+
+- As CNNs superam os modelos de árvore por **~5–15×** (ex.: LRG, ~5.3k → ~0.97k km/s).
+- A **busca de arquitetura com Optuna** melhora ainda mais sobre a CNN *baseline*,
+  com maior ganho no LRG (~2×) e menor no QSO (~1.05×).
+- No ELG, a **detecção de linha** ([O II]) bate a regressão por **~14×**, chegando a
+  ~81 km/s (vs ~20 km/s do piso físico do instrumento).
 - **QSO** é o objeto mais difícil; a PCA só ajuda nele (efeito de *denoising*).
 
 Detalhes, catástrofes ($\eta$), viés e leitura física em [docs/resultados.md](docs/resultados.md).
