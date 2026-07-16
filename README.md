@@ -41,8 +41,10 @@ fica como trabalho futuro; ainda assim, supera o *baseline* nos três alvos.
 - As CNNs superam os modelos de árvore por **~5–15×** (ex.: LRG, ~5.3k → ~0.97k km/s).
 - A **busca de arquitetura com Optuna** melhora ainda mais sobre a CNN *baseline*,
   com maior ganho no LRG (~2×) e menor no QSO (~1.05×).
-- No ELG, a **detecção de linha** ([O II]) bate a regressão por **~14×**, chegando a
-  ~81 km/s (vs ~20 km/s do piso físico do instrumento).
+- No ELG, a **detecção de linha** ([O II]) bate a regressão por **~14×**: ~81 km/s na
+  média multissemente, ~87 km/s no split canônico usado nas figuras da monografia
+  (vs ~20 km/s do piso físico do instrumento). Rejeitando os 10% menos confiantes,
+  cai para ~68 km/s com 0.4% de outliers.
 - **QSO** é o objeto mais difícil; a PCA só ajuda nele (efeito de *denoising*).
 
 Detalhes, catástrofes ($\eta$), viés e leitura física em [docs/resultados.md](docs/resultados.md).
